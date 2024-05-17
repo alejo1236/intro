@@ -94,6 +94,39 @@
             // Llamar a la función de descarga al cargar la página
             descargarBox();
         };
+
+        // Valida la extension para que solo admita PDF como archivo cargado
+        function validarExt()
+        {	
+            var archivo = document.getElementById('archivo');
+            var archivoRuta = archivo.value;
+            var extPermitidas = /(.pdf)$/i;
+            if(archivo.size >= 200*1024*1){
+                alert('EL PDF NO PUEDE PESAR MAS DE 200 KB');
+                document.getElementById("archivo").value = "";
+            }else{
+                if(!extPermitidas.exec(archivoRuta)){
+                    alert('DEBE CARGAR UN ARCHIVO DE TIPO PDF');
+                    archivo.value = '';
+                    return false;
+                }   
+            }	
+        }
+
     </script>
+
+    <!-- FALTA DIRECCION DEL SERVIDOR PARA CARGAR DOCUMENTOS  -->
+    <br></br>
+    <br></br>
+    <br></br>
+
+    <h2>Cargue el documento con el sello ESCANEADO a continuacion</h2>
+    <!-- ACA SE CARGAN LOS ARCHIVOS RADICADOS -->
+
+    <form action="http://104.251.223.181/archivosubidos" method="post" enctype="multipart/form-data">
+        <input type="file" name="archivo" id="archivo" required>
+        <input type="submit" class="btn btn-danger" value="Subir Archivo" onclick="validarExt()">
+    </form>
+
 </body>
 </html>

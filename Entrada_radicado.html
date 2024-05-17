@@ -100,7 +100,7 @@
                 <input type="text" id="txtCargoRemitente" name="txtCargoRemitente" class="form-control" placeholder="Cargo del remitente" required><br>
                 <input type="text" id="txtDirRespuesta" name="txtDirRespuesta" class="form-control" placeholder="Direccion de respuesta" required><br>
                 <input type="number" id="txtDocumento" name="txtDocumento" class="form-control" placeholder="Documento NIT/CC/CE/Pasaporte del remitente" required><br>
-                <input type="text" id="txtCorreo" name="txtCorreo" class="form-control" placeholder="Correo electronico de respuesta" required><br>
+                <input type="email" id="txtCorreo" name="txtCorreo" class="form-control" placeholder="Correo electronico de respuesta" required><br>
             </div>
         </div>
     
@@ -153,14 +153,6 @@
             <textarea id="Asunto" rows="4" class="form-control" name="Asunto" placeholder="Asunto del radicado" required></textarea><br>
             <textarea id="comentarios" rows="4" class="form-control" name="comentarios" placeholder="Comentarios o Anexos (CDs, USB)"></textarea>
             
-            <!-- FALTA DIRECCION DEL SERVIDOR PARA CARGAR DOCUMENTOS  -->
-            <h2>Subir Archivo</h2>
-            <!-- ACA SE CARGAN LOS ARCHIVOS RADICADOS -->
-
-            <form action="Entrada_radicado.html" method="post" enctype="multipart/form-data">
-                <input type="file" name="archivo" id="archivo" required>
-                <input type="submit" class="btn btn-danger" value="Subir Archivo" >
-            </form>
         </div>
     </div>
    
